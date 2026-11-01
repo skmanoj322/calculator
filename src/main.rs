@@ -95,12 +95,11 @@ fn main() {
         let mut value_for_question4 = text_input(&mut input);
         loop {
             if value_for_question4.trim() != "y"
-                || value_for_question4.trim() != "Y"
-                || value_for_question4.trim() != "n"
-                || value_for_question4.trim() != "y"
+                && value_for_question4.trim() != "Y"
+                && value_for_question4.trim() != "n"
+                && value_for_question4.trim() != "N"
             {
-                // this validates the invalid char here other then y or n
-                println!("Only y,n are allowed please re-enter the value");
+                println!("Only y/n are allowed. Please re-enter:");
                 value_for_question4 = text_input(&mut input);
             } else {
                 break;
