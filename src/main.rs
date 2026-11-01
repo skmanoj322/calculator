@@ -72,10 +72,15 @@ fn main() {
                 println!("{}:{}", questions[3], output);
                 break;
             } else if value_for_question2.trim() == "/" {
-                if get_number(&mut value_for_question3) == 0 {
-                    println!("Please Not Enter the 0 in the denominator here"); // validation to check the denominator not to be zero here
-                    value_for_question3 = text_input(&mut input);
+                loop {
+                    if get_number(&mut value_for_question3) == 0 {
+                        println!("Please Not Enter the 0 in the denominator here"); // validation to check the denominator not to be zero here
+                        value_for_question3 = text_input(&mut input);
+                    } else {
+                        break;
+                    }
                 }
+
                 let output = parse_the_input(
                     &mut value_for_question1,
                     &mut value_for_question3,
